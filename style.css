@@ -9,6 +9,14 @@ scroll-behavior:smooth;
 body{
 background:#0d1117;
 color:white;
+overflow-x:hidden;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
 }
 
 /* NAVBAR */
@@ -35,22 +43,15 @@ color:white;
 .hero{
 height:80vh;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
-text-align:center;
 }
 
 .terminal{
 background:#161b22;
 padding:40px;
 border-radius:10px;
-width:400px;
-text-align:left;
-}
-
-.line{
-margin:10px 0;
+width:420px;
 }
 
 .name{
@@ -59,21 +60,6 @@ color:#58a6ff;
 
 .typing{
 color:#3fb950;
-}
-
-/* BUTTONS */
-
-.hero-buttons{
-margin-top:30px;
-}
-
-.hero-buttons a{
-border:1px solid #58a6ff;
-padding:10px 20px;
-margin:10px;
-text-decoration:none;
-color:#58a6ff;
-border-radius:5px;
 }
 
 /* STATS */
@@ -126,13 +112,24 @@ margin-top:40px;
 
 .project{
 background:#161b22;
-padding:25px;
+padding:20px;
 border-radius:10px;
 transition:0.3s;
 }
 
 .project:hover{
 transform:translateY(-6px);
+}
+
+/* GITHUB */
+
+#github{
+padding:80px;
+text-align:center;
+}
+
+#github img{
+margin-top:30px;
 }
 
 /* CONTACT */

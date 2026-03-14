@@ -16,14 +16,16 @@
 
 <body>
 
-<header>
+<canvas id="matrix"></canvas>
 
-<div class="logo">NSN</div>
+<header>
+<div class="logo">naitiksinghnegi.dev</div>
 
 <nav>
 <a href="#about">about</a>
 <a href="#skills">skills</a>
 <a href="#projects">projects</a>
+<a href="#github">github</a>
 <a href="#contact">contact</a>
 </nav>
 
@@ -34,19 +36,14 @@
 
 <div class="terminal">
 
-<p class="line">$ whoami</p>
-<p class="line name">Naitik Singh Negi</p>
+<p>$ whoami</p>
+<p class="name">Naitik Singh Negi</p>
 
-<p class="line">$ role</p>
-
+<p>$ role</p>
 <p class="typing"></p>
 
-</div>
-
-<div class="hero-buttons">
-
-<a href="#projects">view projects</a>
-<a href="#contact">contact</a>
+<p>$ status</p>
+<p>Building modern web applications.</p>
 
 </div>
 
@@ -61,13 +58,13 @@
 </div>
 
 <div class="stat">
-<h2>20+</h2>
-<p>Projects Built</p>
+<h2 id="visitor">0</h2>
+<p>Visitors</p>
 </div>
 
 <div class="stat">
-<h2>10+</h2>
-<p>Technologies</p>
+<h2>20+</h2>
+<p>Projects</p>
 </div>
 
 </section>
@@ -75,13 +72,11 @@
 
 <section id="about">
 
-<h2>about</h2>
+<h2>About</h2>
 
 <p>
-
-Full stack developer with experience building scalable
-applications using modern frontend and backend technologies.
-
+Full Stack Developer experienced in building scalable applications
+using modern technologies including React, Node.js, and Python.
 </p>
 
 </section>
@@ -89,7 +84,7 @@ applications using modern frontend and backend technologies.
 
 <section id="skills">
 
-<h2>tech stack</h2>
+<h2>Tech Stack</h2>
 
 <div class="skills">
 
@@ -114,35 +109,30 @@ applications using modern frontend and backend technologies.
 
 <section id="projects">
 
-<h2>projects</h2>
+<h2>Projects</h2>
 
-<div class="project-grid">
+<div id="project-container" class="project-grid"></div>
 
-<div class="project">
-<h3>MERN Ecommerce</h3>
-<p>Full stack ecommerce application.</p>
-</div>
+</section>
 
-<div class="project">
-<h3>Online Voting System</h3>
-<p>Django based secure voting platform.</p>
-</div>
 
-<div class="project">
-<h3>Portfolio Builder</h3>
-<p>Dynamic developer portfolio generator.</p>
-</div>
+<section id="github">
 
-</div>
+<h2>GitHub Activity</h2>
+
+<img
+src="https://ghchart.rshah.org/409ba5/YOUR_GITHUB_USERNAME"
+alt="GitHub Contributions"
+/>
 
 </section>
 
 
 <section id="contact">
 
-<h2>contact</h2>
+<h2>Contact</h2>
 
-<p>naitik@example.com</p>
+<p>Email: naitik@example.com</p>
 
 </section>
 
@@ -153,9 +143,7 @@ applications using modern frontend and backend technologies.
 
 </footer>
 
-
 <script src="script.js"></script>
 
 </body>
-
 </html>
