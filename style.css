@@ -128,6 +128,23 @@ main {
   flex-wrap: wrap;
 }
 
+.social-row {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.social-row a {
+  color: #c6dbff;
+  text-decoration: none;
+  width: fit-content;
+  border-bottom: 1px dashed transparent;
+}
+
+.social-row a:hover {
+  border-bottom-color: #c6dbff;
+}
+
 .btn {
   border: 1px solid var(--border);
   color: var(--text);
@@ -162,7 +179,8 @@ main {
 
 .stat p,
 #about p,
-.section-head p {
+.section-head p,
+#contact p {
   color: var(--muted);
 }
 
@@ -224,6 +242,28 @@ h2 {
   margin-top: 0.65rem;
 }
 
+.contact-tags {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.contact-tags a {
+  border: 1px solid var(--border);
+  background: rgba(88, 166, 255, 0.1);
+  color: #b9d7ff;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.86rem;
+  text-decoration: none;
+}
+
+.contact-tags a:hover {
+  color: var(--text);
+  border-color: rgba(88, 166, 255, 0.45);
+}
+
 .terminal {
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -258,15 +298,14 @@ footer {
   padding: 1.5rem 0 2.5rem;
   text-align: center;
   color: var(--muted);
-  font-size: 0.9rem;
 }
 
-@media (max-width: 760px) {
-  nav {
-    gap: 0.65rem;
-  }
-
+@media (max-width: 720px) {
   .stats {
     grid-template-columns: 1fr;
+  }
+
+  header {
+    position: static;
   }
 }
