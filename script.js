@@ -1,7 +1,19 @@
-const navLinks = document.querySelectorAll("nav a");
+const text = "Full Stack Developer";
 
-navLinks.forEach(link => {
-link.addEventListener("click", function(){
-console.log("Navigating to section");
-});
-});
+let i = 0;
+
+function typing(){
+
+if(i < text.length){
+
+document.querySelector(".typing").textContent += text.charAt(i);
+
+i++;
+
+setTimeout(typing,80);
+
+}
+
+}
+
+typing();

@@ -2,34 +2,35 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:"JetBrains Mono", monospace;
+scroll-behavior:smooth;
 }
 
 body{
-background:#0f172a;
+background:#0d1117;
 color:white;
 }
+
+/* NAVBAR */
 
 header{
 display:flex;
 justify-content:space-between;
-align-items:center;
 padding:20px 10%;
-background:#020617;
-position:sticky;
-top:0;
-}
-
-.logo{
-font-size:22px;
-font-weight:bold;
+border-bottom:1px solid #222;
 }
 
 nav a{
-margin-left:25px;
+margin-left:20px;
 text-decoration:none;
+color:#aaa;
+}
+
+nav a:hover{
 color:white;
 }
+
+/* HERO */
 
 .hero{
 height:80vh;
@@ -38,60 +39,81 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
 }
 
-.hero h1{
-font-size:55px;
+.terminal{
+background:#161b22;
+padding:40px;
+border-radius:10px;
+width:400px;
+text-align:left;
 }
 
-.hero h2{
-color:#3b82f6;
-margin-top:10px;
+.line{
+margin:10px 0;
 }
 
-.hero p{
-margin-top:20px;
-max-width:600px;
-opacity:0.7;
+.name{
+color:#58a6ff;
 }
+
+.typing{
+color:#3fb950;
+}
+
+/* BUTTONS */
 
 .hero-buttons{
 margin-top:30px;
 }
 
 .hero-buttons a{
-padding:12px 25px;
-background:#3b82f6;
-color:white;
-text-decoration:none;
+border:1px solid #58a6ff;
+padding:10px 20px;
 margin:10px;
-border-radius:6px;
+text-decoration:none;
+color:#58a6ff;
+border-radius:5px;
 }
 
-.about{
+/* STATS */
+
+.stats{
+display:flex;
+justify-content:center;
+gap:60px;
+padding:60px;
+}
+
+.stat h2{
+color:#58a6ff;
+}
+
+/* ABOUT */
+
+#about{
 padding:80px 10%;
 text-align:center;
 }
 
-.skills{
+/* SKILLS */
+
+#skills{
 padding:80px 10%;
+text-align:center;
 }
 
-.skill-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-margin-top:40px;
+.skills span{
+display:inline-block;
+background:#161b22;
+padding:10px 15px;
+margin:8px;
+border-radius:20px;
 }
 
-.skill-card{
-background:#020617;
-padding:25px;
-border-radius:10px;
-}
+/* PROJECTS */
 
-.projects{
+#projects{
 padding:80px 10%;
 }
 
@@ -102,19 +124,26 @@ gap:30px;
 margin-top:40px;
 }
 
-.project-card{
-background:#020617;
+.project{
+background:#161b22;
 padding:25px;
 border-radius:10px;
+transition:0.3s;
 }
 
-.contact{
-padding:80px 10%;
+.project:hover{
+transform:translateY(-6px);
+}
+
+/* CONTACT */
+
+#contact{
+padding:80px;
 text-align:center;
 }
 
 footer{
 text-align:center;
 padding:20px;
-background:#020617;
+border-top:1px solid #222;
 }
