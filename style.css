@@ -128,6 +128,23 @@ main {
   flex-wrap: wrap;
 }
 
+.social-row {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.social-row a {
+  color: #c6dbff;
+  text-decoration: none;
+  width: fit-content;
+  border-bottom: 1px dashed transparent;
+}
+
+.social-row a:hover {
+  border-bottom-color: #c6dbff;
+}
+
 .btn {
   border: 1px solid var(--border);
   color: var(--text);
@@ -162,7 +179,8 @@ main {
 
 .stat p,
 #about p,
-.section-head p {
+.section-head p,
+#contact p {
   color: var(--muted);
 }
 
@@ -224,6 +242,18 @@ h2 {
   margin-top: 0.65rem;
 }
 
+.contact-list {
+  margin-top: 0.7rem;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.contact-list a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
 .terminal {
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -258,15 +288,14 @@ footer {
   padding: 1.5rem 0 2.5rem;
   text-align: center;
   color: var(--muted);
-  font-size: 0.9rem;
 }
 
-@media (max-width: 760px) {
-  nav {
-    gap: 0.65rem;
-  }
-
+@media (max-width: 720px) {
   .stats {
     grid-template-columns: 1fr;
+  }
+
+  header {
+    position: static;
   }
 }
