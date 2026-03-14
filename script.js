@@ -62,7 +62,7 @@ const commands = {
   ],
   work: ["Scroll to the Work section to explore highlighted builds."],
   contact: [
-    "Email: naitiksinghnegi.dev@gmail.com",
+    "Email: hello@naitik.dev",
     "GitHub: github.com/naitiksinghnegi",
     "Discord: discordapp.com/users/1309473430055293040"
   ]

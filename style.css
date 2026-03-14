@@ -242,26 +242,16 @@ h2 {
   margin-top: 0.65rem;
 }
 
-.contact-tags {
+.contact-list {
   margin-top: 0.7rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
 }
 
-.contact-tags a {
-  border: 1px solid var(--border);
-  background: rgba(88, 166, 255, 0.1);
-  color: #b9d7ff;
-  border-radius: 999px;
-  padding: 0.35rem 0.7rem;
-  font-size: 0.86rem;
+.contact-list a {
+  color: var(--accent);
   text-decoration: none;
-}
-
-.contact-tags a:hover {
-  color: var(--text);
-  border-color: rgba(88, 166, 255, 0.45);
 }
 
 .terminal {
