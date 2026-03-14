@@ -3,8 +3,7 @@ const config = {
     "Full Stack Developer",
     "React + Node.js Builder",
     "API & Performance Enthusiast"
-  ],
-  githubUsername: "naitiksinghnegi"
+  ]
 };
 
 // Typing animation with rotating text
@@ -45,52 +44,12 @@ const storedCount = Number(localStorage.getItem("visits") || 0) + 1;
 localStorage.setItem("visits", String(storedCount));
 visitorElement.textContent = storedCount.toLocaleString();
 
-// Fetch GitHub repositories
-const projectContainer = document.getElementById("project-container");
-
-async function loadRepos() {
-  try {
-    const response = await fetch(
-      `https://api.github.com/users/${config.githubUsername}/repos?sort=updated&per_page=6`
-    );
-
-    if (!response.ok) {
-      throw new Error(`GitHub API failed with status ${response.status}`);
-    }
-
-    const repos = await response.json();
-
-    if (!Array.isArray(repos) || repos.length === 0) {
-      projectContainer.innerHTML = "<p>No repositories found yet.</p>";
-      return;
-    }
-
-    projectContainer.innerHTML = repos
-      .map(
-        (repo) => `
-          <article class="project">
-            <h3>${repo.name}</h3>
-            <p>${repo.description || "No description provided."}</p>
-            <a href="${repo.html_url}" target="_blank" rel="noreferrer">View Repository →</a>
-          </article>
-        `
-      )
-      .join("");
-  } catch (error) {
-    projectContainer.innerHTML =
-      '<p>Could not load repositories right now. Please check again later.</p>';
-    console.error(error);
-  }
-}
-
-loadRepos();
-
 // Terminal command widget
 const input = document.getElementById("terminal-input");
 const output = document.getElementById("terminal-output");
 
 const commands = {
-  help: ["help", "about", "skills", "projects", "contact", "clear"],
+  help: ["help", "about", "skills", "work", "contact", "clear"],
   about: [
     "Naitik Singh Negi",
     "Full Stack Developer",
@@ -101,8 +60,12 @@ const commands = {
     "Backend: Node.js, Express, Python",
     "Data: MongoDB, MySQL, PostgreSQL"
   ],
-  projects: ["Scroll to the Projects section to explore featured repositories."],
-  contact: ["Email: hello@naitik.dev", "GitHub: github.com/naitiksinghnegi"]
+  work: ["Scroll to the Work section to explore highlighted builds."],
+  contact: [
+    "Email: hello@naitik.dev",
+    "GitHub: github.com/naitiksinghnegi",
+    "Discord: discordapp.com/users/1309473430055293040"
+  ]
 };
 
 function printToTerminal(lines) {
