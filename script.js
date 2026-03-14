@@ -35,7 +35,7 @@ localStorage.setItem("visits",count);
 document.getElementById("visitor").innerText = count;
 
 
-// fetch github projects
+// fetch github repos
 
 const username = "YOUR_GITHUB_USERNAME";
 
@@ -64,7 +64,73 @@ container.appendChild(card);
 });
 
 
-// matrix background
+// TERMINAL COMMANDS
+
+const input = document.getElementById("terminal-input");
+const output = document.getElementById("terminal-output");
+
+const commands = {
+
+help: `
+Commands:
+help
+about
+skills
+projects
+clear
+`,
+
+about: `
+Naitik Singh Negi
+Full Stack Developer
+3+ years experience
+`,
+
+skills: `
+HTML
+CSS
+JavaScript
+Python
+React
+Node.js
+MongoDB
+MySQL
+`,
+
+projects: `
+Check the GitHub projects section above.
+`
+
+};
+
+input.addEventListener("keydown", function(e){
+
+if(e.key === "Enter"){
+
+const cmd = input.value;
+
+output.innerHTML += `<div>$ ${cmd}</div>`;
+
+if(cmd === "clear"){
+output.innerHTML = "";
+}
+
+else if(commands[cmd]){
+output.innerHTML += `<div>${commands[cmd]}</div>`;
+}
+
+else{
+output.innerHTML += `<div>Command not found</div>`;
+}
+
+input.value = "";
+
+}
+
+});
+
+
+// MATRIX RAIN
 
 const canvas = document.getElementById("matrix");
 
@@ -75,9 +141,7 @@ canvas.width = window.innerWidth;
 
 const letters = "01";
 const fontSize = 14;
-
 const columns = canvas.width / fontSize;
-
 const drops = [];
 
 for(let x = 0; x < columns; x++)

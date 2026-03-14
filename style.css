@@ -41,25 +41,17 @@ color:white;
 /* HERO */
 
 .hero{
-height:80vh;
+height:60vh;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
-}
-
-.terminal{
-background:#161b22;
-padding:40px;
-border-radius:10px;
-width:420px;
-}
-
-.name{
-color:#58a6ff;
+text-align:center;
 }
 
 .typing{
 color:#3fb950;
+margin-top:10px;
 }
 
 /* STATS */
@@ -114,30 +106,47 @@ margin-top:40px;
 background:#161b22;
 padding:20px;
 border-radius:10px;
-transition:0.3s;
 }
 
-.project:hover{
-transform:translateY(-6px);
+.project a{
+color:#58a6ff;
+text-decoration:none;
 }
 
-/* GITHUB */
+/* TERMINAL */
 
-#github{
+#terminal{
 padding:80px;
 text-align:center;
 }
 
-#github img{
-margin-top:30px;
+.terminal{
+background:#161b22;
+width:600px;
+margin:auto;
+padding:20px;
+border-radius:10px;
+text-align:left;
 }
 
-/* CONTACT */
-
-#contact{
-padding:80px;
-text-align:center;
+.input-line{
+display:flex;
+margin-top:10px;
 }
+
+.input-line span{
+margin-right:10px;
+}
+
+input{
+background:transparent;
+border:none;
+color:white;
+outline:none;
+width:100%;
+}
+
+/* FOOTER */
 
 footer{
 text-align:center;
