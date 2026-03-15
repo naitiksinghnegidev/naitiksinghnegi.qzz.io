@@ -225,6 +225,30 @@ body {
   color: #d5e0ff;
 }
 
+
+.contact-links {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.contact-links a {
+  border: 1px solid var(--border);
+  background: rgba(110, 168, 255, 0.08);
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.65rem;
+  font-weight: 500;
+}
+
+.contact-links a:hover,
+.contact-links a:focus-visible {
+  border-color: rgba(110, 168, 255, 0.6);
+  color: #dcebff;
+}
+
 .contact-form {
   margin-top: 1.2rem;
   padding: 1rem;
