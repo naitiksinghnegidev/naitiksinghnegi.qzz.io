@@ -3,8 +3,7 @@ const config = {
     "Full Stack Developer",
     "React + Node.js Builder",
     "API & Performance Enthusiast"
-  ],
-  githubUsername: "naitiksinghnegi"
+  ]
 };
 
 // Typing animation with rotating text
@@ -45,52 +44,12 @@ const storedCount = Number(localStorage.getItem("visits") || 0) + 1;
 localStorage.setItem("visits", String(storedCount));
 visitorElement.textContent = storedCount.toLocaleString();
 
-// Fetch GitHub repositories
-const projectContainer = document.getElementById("project-container");
-
-async function loadRepos() {
-  try {
-    const response = await fetch(
-      `https://api.github.com/users/${config.githubUsername}/repos?sort=updated&per_page=6`
-    );
-
-    if (!response.ok) {
-      throw new Error(`GitHub API failed with status ${response.status}`);
-    }
-
-    const repos = await response.json();
-
-    if (!Array.isArray(repos) || repos.length === 0) {
-      projectContainer.innerHTML = "<p>No repositories found yet.</p>";
-      return;
-    }
-
-    projectContainer.innerHTML = repos
-      .map(
-        (repo) => `
-          <article class="project">
-            <h3>${repo.name}</h3>
-            <p>${repo.description || "No description provided."}</p>
-            <a href="${repo.html_url}" target="_blank" rel="noreferrer">View Repository →</a>
-          </article>
-        `
-      )
-      .join("");
-  } catch (error) {
-    projectContainer.innerHTML =
-      '<p>Could not load repositories right now. Please check again later.</p>';
-    console.error(error);
-  }
-}
-
-loadRepos();
-
 // Terminal command widget
 const input = document.getElementById("terminal-input");
 const output = document.getElementById("terminal-output");
 
 const commands = {
-  help: ["help", "about", "skills", "projects", "contact", "clear"],
+  help: ["help", "about", "skills", "work", "process", "contact", "clear"],
   about: [
     "Naitik Singh Negi",
     "Full Stack Developer",
@@ -101,8 +60,13 @@ const commands = {
     "Backend: Node.js, Express, Python",
     "Data: MongoDB, MySQL, PostgreSQL"
   ],
-  projects: ["Scroll to the Projects section to explore featured repositories."],
-  contact: ["Email: hello@naitik.dev", "GitHub: github.com/naitiksinghnegi"]
+  work: ["Scroll to the Work section to explore highlighted builds."],
+  process: ["Simple flow: Discover → Design → Build → Launch"],
+  contact: [
+    "Email: naitiksinghnegi.dev@gmail.com",
+    "GitHub: github.com/naitiksinghnegi",
+    "Discord: discordapp.com/users/1309473430055293040"
+  ]
 };
 
 function printToTerminal(lines) {
@@ -135,6 +99,48 @@ input.addEventListener("keydown", (event) => {
 
   input.value = "";
 });
+
+// Scroll reveal animation
+const revealItems = document.querySelectorAll(".section-card, .project, .stat");
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+
+revealItems.forEach((item) => {
+  item.classList.add("reveal");
+  revealObserver.observe(item);
+});
+
+// Active nav state on scroll
+const sections = document.querySelectorAll("main section[id]");
+const navLinks = document.querySelectorAll("nav a[href^='#']");
+
+function updateActiveNav() {
+  let currentId = "home";
+
+  sections.forEach((section) => {
+    const top = section.offsetTop - 160;
+    if (window.scrollY >= top) {
+      currentId = section.id;
+    }
+  });
+
+  navLinks.forEach((link) => {
+    const isMatch = link.getAttribute("href") === `#${currentId}`;
+    link.classList.toggle("active", isMatch);
+  });
+}
+
+updateActiveNav();
+window.addEventListener("scroll", updateActiveNav, { passive: true });
 
 // Matrix rain background
 const canvas = document.getElementById("matrix");
