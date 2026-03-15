@@ -43,7 +43,7 @@ if (form && formStatus) {
     event.preventDefault();
     const data = new FormData(form);
     const name = data.get('name')?.toString().trim() || 'there';
-    formStatus.textContent = `Thanks ${name}! Your message is saved locally in this demo. I will get back to you soon.`;
+    formStatus.textContent = `Thanks ${name}! Your message is captured in this portfolio demo. I will contact you soon.`;
     form.reset();
   });
 }
