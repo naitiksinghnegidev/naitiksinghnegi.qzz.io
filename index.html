@@ -1,179 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Naitik Singh Negi | Full Stack Developer</title>
-  <meta
-    name="description"
-    content="Portfolio of Naitik Singh Negi — full stack developer focused on performant web apps and backend systems."
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naitik Singh Negi | Full Stack Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <canvas id="matrix" aria-hidden="true"></canvas>
-
-  <header>
-    <a class="logo" href="#home">NSN</a>
     <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Tech Stack</a>
-      <a href="#work">Work</a>
-      <a href="#contact">Contact</a>
-      <a href="#terminal">Terminal</a>
-      <a class="btn-link" href="https://github.com/naitiksinghnegi" target="_blank" rel="noreferrer">GitHub</a>
+        <div class="logo">NSN<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
     </nav>
-  </header>
 
-  <main>
-    <section id="home" class="hero section-card">
-      <p class="eyebrow">PORTFOLIO / 2026</p>
-      <h1>Naitik Singh Negi</h1>
-      <h2 class="typing" aria-live="polite"></h2>
-      <p class="hero-copy">
-        I design and build modern digital products with clean UI, scalable APIs, and performance-first architecture.
-      </p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#work">View Work</a>
-        <a class="btn" href="mailto:naitiksinghnegi.dev@gmail.com">Contact Me</a>
-      </div>
-      <div class="social-row" aria-label="Social links">
-        <a href="mailto:naitiksinghnegi.dev@gmail.com">✉️ naitiksinghnegi.dev@gmail.com</a>
-        <a href="https://github.com/naitiksinghnegi" target="_blank" rel="noreferrer">🐙 github.com/naitiksinghnegi</a>
-        <a href="https://discordapp.com/users/1309473430055293040" target="_blank" rel="noreferrer">💬 Discord Profile</a>
-      </div>
-      <div class="hero-highlights" aria-label="Core strengths">
-        <article>
-          <h3>Frontend Craft</h3>
-          <p>Responsive interfaces with smooth UX and strong accessibility baseline.</p>
-        </article>
-        <article>
-          <h3>Backend Systems</h3>
-          <p>Reliable APIs, auth flows, and database design for production-ready apps.</p>
-        </article>
-        <article>
-          <h3>Performance Focus</h3>
-          <p>Optimized rendering, lean bundles, and measurable improvements.</p>
-        </article>
-      </div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="reveal">Hi, I'm <span class="highlight">Naitik Singh Negi</span></h1>
+            <p class="reveal">Full Stack Developer building digital experiences.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
     </section>
 
-    <section class="stats section-card" aria-label="Quick stats">
-      <article class="stat">
-        <h2>3+</h2>
-        <p>Years Experience</p>
-      </article>
-      <article class="stat">
-        <h2 id="visitor">0</h2>
-        <p>Visits</p>
-      </article>
-      <article class="stat">
-        <h2>20+</h2>
-        <p>Projects Delivered</p>
-      </article>
-      <article class="stat">
-        <h2>99%</h2>
-        <p>Client Satisfaction</p>
-      </article>
+    <section id="projects" class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>E-Commerce Platform</h3>
+                    <p>MERN Stack application with Stripe integration.</p>
+                    <div class="tags">
+                        <span>React</span><span>Node.js</span><span>MongoDB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>AI Chatbot</h3>
+                    <p>Real-time chat using OpenAI API and WebSockets.</p>
+                    <div class="tags">
+                        <span>Python</span><span>JS</span><span>Socket.io</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="about" class="section-card">
-      <h2>About</h2>
-      <p>
-        I am a full stack developer who enjoys transforming product ideas into polished, user-friendly experiences.
-        My workflow balances design clarity, code quality, and long-term maintainability.
-      </p>
-      <div class="about-grid">
-        <article class="about-item">
-          <h3>What I Value</h3>
-          <p>Readable code, scalable architecture, and clear communication with teams and clients.</p>
-        </article>
-        <article class="about-item">
-          <h3>How I Work</h3>
-          <p>From planning to launch, I keep feedback loops short and ship in focused iterations.</p>
-        </article>
-      </div>
+    <section id="contact" class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
     </section>
 
-    <section id="skills" class="section-card">
-      <h2>Tech Stack</h2>
-      <div class="skills">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>TypeScript</span>
-        <span>React</span>
-        <span>Next.js</span>
-        <span>Node.js</span>
-        <span>Express</span>
-        <span>Python</span>
-        <span>MongoDB</span>
-        <span>MySQL</span>
-        <span>PostgreSQL</span>
-        <span>Shopify</span>
-        <span>WordPress</span>
-      </div>
-    </section>
+    <footer>
+        <p>&copy; 2024 Naitik Singh Negi. Built with passion.</p>
+    </footer>
 
-    <section id="work" class="section-card">
-      <div class="section-head">
-        <h2>Highlighted Work</h2>
-        <p>Selected showcase projects and product concepts.</p>
-      </div>
-      <div class="project-grid">
-        <article class="project featured">
-          <span class="project-badge">Featured</span>
-          <h3>Arnav Portfolio Concept</h3>
-          <p>A clean, animated personal website concept inspired by modern creator portfolios.</p>
-          <a href="https://arnav.qzz.io/" target="_blank" rel="noreferrer">Open Live Demo →</a>
-        </article>
-        <article class="project">
-          <span class="project-badge">UI/UX</span>
-          <h3>DevDash UI Kit</h3>
-          <p>A fake admin dashboard kit with reusable cards, analytics widgets, and profile settings pages.</p>
-          <a href="#" aria-disabled="true">Demo Coming Soon</a>
-        </article>
-        <article class="project">
-          <span class="project-badge">Full Stack</span>
-          <h3>API Monitor Pro</h3>
-          <p>A fake full-stack monitoring tool idea for tracking endpoint latency, uptime, and alerts in real-time.</p>
-          <a href="#" aria-disabled="true">Case Study Coming Soon</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="section-card">
-      <h2>Contact</h2>
-      <p>You can reach me directly on any of these platforms:</p>
-      <div class="contact-tags">
-        <a href="mailto:naitiksinghnegi.dev@gmail.com">Email: naitiksinghnegi.dev@gmail.com</a>
-        <a href="https://github.com/naitiksinghnegi" target="_blank" rel="noreferrer">GitHub: github.com/naitiksinghnegi</a>
-        <a href="https://discordapp.com/users/1309473430055293040" target="_blank" rel="noreferrer">Discord: discordapp.com/users/1309473430055293040</a>
-      </div>
-    </section>
-
-    <section id="terminal" class="section-card">
-      <h2>Developer Terminal</h2>
-      <div class="terminal" role="region" aria-label="Interactive portfolio terminal">
-        <div id="terminal-output"></div>
-        <label class="input-line" for="terminal-input">
-          <span>$</span>
-          <input id="terminal-input" type="text" autocomplete="off" placeholder="Type help and press Enter" />
-        </label>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2026 Naitik Singh Negi • Built with vanilla HTML/CSS/JS</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
