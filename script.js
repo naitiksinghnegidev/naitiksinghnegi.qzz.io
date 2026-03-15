@@ -1,8 +1,6 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.menu');
 const menuLinks = document.querySelectorAll('.menu a');
-const form = document.querySelector('#contact-form');
-const formStatus = document.querySelector('#form-status');
 const yearEl = document.querySelector('#year');
 const revealItems = document.querySelectorAll('.reveal');
 
@@ -37,13 +35,3 @@ const revealObserver = new IntersectionObserver(
 );
 
 revealItems.forEach((item) => revealObserver.observe(item));
-
-if (form && formStatus) {
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const data = new FormData(form);
-    const name = data.get('name')?.toString().trim() || 'there';
-    formStatus.textContent = `Thanks ${name}! Your message is captured in this portfolio demo. I will contact you soon.`;
-    form.reset();
-  });
-}
