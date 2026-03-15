@@ -1,75 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naitik Singh Negi | Full Stack Developer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naitik Singh Negi | Full Stack Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Naitik Singh Negi, a full stack developer building performant web apps and clean user experiences.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">NSN<span>.</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
+  <header class="site-header">
+    <nav class="nav wrapper" aria-label="Main navigation">
+      <a href="#home" class="brand">Naitik<span>.</span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="main-menu" class="menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#connect">Connect</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="reveal">Hi, I'm <span class="highlight">Naitik Singh Negi</span></h1>
-            <p class="reveal">Full Stack Developer building digital experiences.</p>
-            <a href="#projects" class="btn">View My Work</a>
-        </div>
+  <main>
+    <section id="home" class="hero wrapper reveal">
+      <p class="eyebrow">Full Stack Developer</p>
+      <h1>Building fast, elegant, and scalable digital products.</h1>
+      <p class="hero-copy">I’m <strong>Naitik Singh Negi</strong>. I design and develop web experiences that feel premium, perform smoothly, and solve real business problems.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#projects">See Projects</a>
+        <a class="button ghost" href="#contact">Hire Me</a>
+        <a class="button ghost" href="https://github.com/naitiksinghnegi" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
     </section>
 
-    <section id="projects" class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <div class="project-img"></div>
-                <div class="project-info">
-                    <h3>E-Commerce Platform</h3>
-                    <p>MERN Stack application with Stripe integration.</p>
-                    <div class="tags">
-                        <span>React</span><span>Node.js</span><span>MongoDB</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img"></div>
-                <div class="project-info">
-                    <h3>AI Chatbot</h3>
-                    <p>Real-time chat using OpenAI API and WebSockets.</p>
-                    <div class="tags">
-                        <span>Python</span><span>JS</span><span>Socket.io</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section id="about" class="section wrapper reveal">
+      <h2>About Me</h2>
+      <p>I focus on end-to-end product development: from UI architecture to API design, performance tuning, deployment, and maintenance. I care about shipping products that are beautiful, accessible, and business-ready.</p>
+      <div class="stats-grid">
+        <article class="stat-card">
+          <h3>25+</h3>
+          <p>Projects built across web apps, dashboards, and SaaS tools.</p>
+        </article>
+        <article class="stat-card">
+          <h3>3+</h3>
+          <p>Years of hands-on development in modern JavaScript stacks.</p>
+        </article>
+        <article class="stat-card">
+          <h3>99%</h3>
+          <p>Focus on responsive experiences and performance-first coding.</p>
+        </article>
+      </div>
     </section>
 
-    <section id="contact" class="container">
-        <h2 class="section-title">Get In Touch</h2>
-        <form id="contact-form">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
+    <section id="skills" class="section wrapper reveal">
+      <h2>Core Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-item">JavaScript / TypeScript</div>
+        <div class="skill-item">React & Next.js</div>
+        <div class="skill-item">Node.js & Express</div>
+        <div class="skill-item">MongoDB / PostgreSQL</div>
+        <div class="skill-item">REST APIs / Auth</div>
+        <div class="skill-item">UI Systems / CSS</div>
+        <div class="skill-item">Cloud Deployments</div>
+        <div class="skill-item">Testing & Debugging</div>
+      </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Naitik Singh Negi. Built with passion.</p>
-    </footer>
+    <section id="projects" class="section wrapper reveal">
+      <h2>Featured Work</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <p class="project-label">SaaS Platform</p>
+          <h3>InvoiceFlow</h3>
+          <p>Built a complete billing and invoicing dashboard with analytics, role-based access, and PDF exports.</p>
+          <ul>
+            <li>React + Node.js + PostgreSQL</li>
+            <li>JWT auth and team permissions</li>
+            <li>Performance optimized data tables</li>
+          </ul>
+        </article>
+        <article class="project-card">
+          <p class="project-label">E-Commerce</p>
+          <h3>UrbanCart</h3>
+          <p>Designed and shipped a storefront with advanced search, dynamic filters, and one-page checkout.</p>
+          <ul>
+            <li>Next.js + Stripe integration</li>
+            <li>Reusable component system</li>
+            <li>SEO and Core Web Vitals improvements</li>
+          </ul>
+        </article>
+        <article class="project-card">
+          <p class="project-label">AI Product</p>
+          <h3>SupportGPT Assistant</h3>
+          <p>Created an AI customer support assistant that reduced support response time with real-time chat.</p>
+          <ul>
+            <li>Node.js + WebSockets + OpenAI</li>
+            <li>Conversation history and triage logic</li>
+            <li>Admin analytics for support quality</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+
+    <section id="connect" class="section wrapper reveal">
+      <h2>Connect With Me</h2>
+      <p>I’m active on Discord, GitHub, and email. If you want to collaborate, discuss a project, or just say hello, reach out on any platform below.</p>
+      <div class="connect-grid">
+        <a class="connect-card" href="https://github.com/naitiksinghnegi" target="_blank" rel="noreferrer">
+          <h3>GitHub</h3>
+          <p>@naitiksinghnegi</p>
+          <span>View repositories</span>
+        </a>
+        <a class="connect-card" href="mailto:naitiksinghnegi.dev@gmail.com">
+          <h3>Email</h3>
+          <p>naitiksinghnegi.dev@gmail.com</p>
+          <span>Send a direct message</span>
+        </a>
+        <a class="connect-card" href="https://discordapp.com/users/1309473430055293040" target="_blank" rel="noreferrer">
+          <h3>Discord</h3>
+          <p>@naitiksinghnegi</p>
+          <span>Open my Discord profile and connect with me directly.</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact" class="section wrapper reveal">
+      <h2>Let’s Build Something Great</h2>
+      <p>If you want a portfolio-level product for your startup, business, or personal brand, I’m ready to help.</p>
+      <form id="contact-form" class="contact-form">
+        <label>
+          Name
+          <input type="text" name="name" required placeholder="Your full name">
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required placeholder="you@example.com">
+        </label>
+        <label>
+          Project Details
+          <textarea name="message" rows="5" required placeholder="Tell me what you want to build"></textarea>
+        </label>
+        <button type="submit" class="button primary">Send Message</button>
+      </form>
+      <p id="form-status" class="form-status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Naitik Singh Negi — Crafted with intention and clean code.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
