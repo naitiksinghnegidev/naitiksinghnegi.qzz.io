@@ -22,9 +22,9 @@
       </button>
       <ul id="main-menu" class="menu">
         <li><a href="#about">About</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -36,7 +36,11 @@
       <p class="hero-copy">I’m Naitik Singh Negi, a full stack developer focused on product design, scalable architecture, and clean implementation. I turn ambitious ideas into polished software.</p>
       <div class="hero-actions">
         <a class="button primary" href="#projects">View Work</a>
-        <a class="button ghost" href="#contact">Let’s Talk</a>
+        <a class="button ghost" href="mailto:naitiksinghnegi.dev@gmail.com">Contact Me</a>
+      </div>
+      <div class="terminal-card" aria-label="Terminal style introduction">
+        <p>naitik@dev: ~/portfolio</p>
+        <p>➜ Building clean products, reliable backends, and smooth user journeys.</p>
       </div>
       <div class="hero-tags" aria-label="Technology highlights">
         <span>Next.js</span>
@@ -44,6 +48,40 @@
         <span>TypeScript</span>
         <span>PostgreSQL</span>
         <span>Cloudflare</span>
+      </div>
+    </section>
+
+    <section id="capabilities" class="section wrapper reveal">
+      <div class="section-head">
+        <p class="kicker">Capabilities</p>
+        <h2>What I build for modern teams.</h2>
+      </div>
+      <p class="section-copy">Inspired by the structure from arnav.qzz.io, this section highlights the core product areas I can deliver end-to-end.</p>
+      <div class="capability-grid">
+        <article class="capability-card">
+          <h3>Web Applications</h3>
+          <p>High-performance full-stack platforms built for production and scale.</p>
+        </article>
+        <article class="capability-card">
+          <h3>Backend Systems</h3>
+          <p>Secure APIs, role-based auth flows, and resilient service architecture.</p>
+        </article>
+        <article class="capability-card">
+          <h3>Admin Dashboards</h3>
+          <p>Practical interfaces for analytics, operations, and team management.</p>
+        </article>
+        <article class="capability-card">
+          <h3>Automation Tools</h3>
+          <p>Workflow and productivity tooling that reduces repetitive manual work.</p>
+        </article>
+        <article class="capability-card">
+          <h3>Performance Optimization</h3>
+          <p>Speed tuning, observability, and bottleneck reduction across the stack.</p>
+        </article>
+        <article class="capability-card">
+          <h3>Cloud Deployment</h3>
+          <p>Production deployment pipelines with CI/CD and robust uptime practices.</p>
+        </article>
       </div>
     </section>
 
@@ -79,6 +117,20 @@
         <div class="skill-item"><strong>Backend:</strong> Node.js, Express, REST APIs, WebSockets, Auth Flows</div>
         <div class="skill-item"><strong>Databases:</strong> PostgreSQL, MongoDB, Prisma, Redis</div>
         <div class="skill-item"><strong>Cloud + DevOps:</strong> Cloudflare, Vercel, CI/CD, Monitoring</div>
+      </div>
+      <div class="stack-groups" aria-label="Tech stack groups">
+        <article class="stack-card">
+          <h3>Languages</h3>
+          <p>JavaScript, TypeScript, Python, SQL</p>
+        </article>
+        <article class="stack-card">
+          <h3>Backend & Databases</h3>
+          <p>Node.js, Express, PostgreSQL, MongoDB, Prisma, Redis</p>
+        </article>
+        <article class="stack-card">
+          <h3>Cloud & Tools</h3>
+          <p>Cloudflare, Vercel, GitHub Actions, Docker, Monitoring</p>
+        </article>
       </div>
     </section>
 
@@ -121,38 +173,15 @@
       </div>
     </section>
 
-    <section id="contact" class="section wrapper reveal">
-      <div class="section-head">
-        <p class="kicker">Contact</p>
-        <h2>Let’s build something people remember.</h2>
-      </div>
-      <p class="section-copy">If you need a developer who can move fast without compromising quality, I’d love to collaborate.</p>
-      <div class="contact-links" aria-label="Direct contact links">
-        <a href="mailto:naitiksinghnegi.dev@gmail.com">naitiksinghnegi.dev@gmail.com</a>
-        <a href="https://discordapp.com/users/1309473430055293040" target="_blank" rel="noopener noreferrer">Discord</a>
-        <a href="https://github.com/naitiksinghnegi" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
-      <form id="contact-form" class="contact-form">
-        <label>
-          Name
-          <input type="text" name="name" required placeholder="Your full name">
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" required placeholder="you@example.com">
-        </label>
-        <label>
-          Project details
-          <textarea name="message" rows="5" required placeholder="Tell me about your project"></textarea>
-        </label>
-        <button type="submit" class="button primary">Send Message</button>
-      </form>
-      <p id="form-status" class="form-status" aria-live="polite"></p>
-    </section>
   </main>
 
   <footer class="site-footer">
     <p>© <span id="year"></span> Naitik Singh Negi — Built with precision and intent.</p>
+    <div class="footer-links" aria-label="Direct contact links">
+      <a href="mailto:naitiksinghnegi.dev@gmail.com">naitiksinghnegi.dev@gmail.com</a>
+      <a href="https://discordapp.com/users/1309473430055293040" target="_blank" rel="noopener noreferrer">Discord</a>
+      <a href="https://github.com/naitiksinghnegi" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
   </footer>
 
   <script src="script.js"></script>

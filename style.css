@@ -218,7 +218,9 @@ body {
 
 .stats-grid,
 .skills-grid,
-.project-grid {
+.project-grid,
+.capability-grid,
+.stack-groups {
   display: grid;
   gap: 1rem;
   margin-top: 1.4rem;
@@ -239,7 +241,9 @@ body {
 .stat-card,
 .skill-item,
 .project-card,
-.contact-form {
+.capability-card,
+.stack-card,
+.terminal-card {
   background: linear-gradient(180deg, var(--surface), var(--surface-soft));
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -247,7 +251,10 @@ body {
 
 .stat-card,
 .skill-item,
-.project-card {
+.project-card,
+.capability-card,
+.stack-card,
+.terminal-card {
   padding: 1.2rem;
 }
 
@@ -285,56 +292,50 @@ body {
   margin-left: 1.1rem;
 }
 
-.contact-links {
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
+.capability-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }
 
-.contact-links a {
+.capability-card h3,
+.stack-card h3 {
+  margin-bottom: 0.45rem;
+}
+
+.capability-card p,
+.stack-card p,
+.terminal-card p {
+  color: var(--muted);
+}
+
+.stack-groups {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.terminal-card {
+  margin-top: 1.2rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.terminal-card p + p {
+  margin-top: 0.35rem;
+}
+
+.footer-links {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.footer-links a {
   border: 1px solid var(--border);
   background: rgba(120, 165, 255, 0.1);
   color: var(--text);
   text-decoration: none;
-  padding: 0.5rem 0.8rem;
+  padding: 0.4rem 0.75rem;
   border-radius: 0.65rem;
   font-weight: 600;
-}
-
-.contact-form {
-  margin-top: 1.15rem;
-  padding: 1rem;
-  display: grid;
-  gap: 0.85rem;
-}
-
-.contact-form label {
-  display: grid;
-  gap: 0.35rem;
-  font-weight: 600;
-}
-
-input,
-textarea {
-  border: 1px solid var(--border);
-  background: rgba(11, 14, 27, 0.85);
-  color: var(--text);
-  padding: 0.72rem 0.85rem;
-  border-radius: 0.6rem;
-  font: inherit;
-}
-
-input:focus,
-textarea:focus {
-  outline: 2px solid rgba(120, 165, 255, 0.45);
-  outline-offset: 1px;
-}
-
-.form-status {
-  margin-top: 0.75rem;
-  min-height: 1.5rem;
-  color: #95bcff;
 }
 
 .site-footer {
