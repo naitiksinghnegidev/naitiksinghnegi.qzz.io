@@ -225,138 +225,104 @@ body {
   color: var(--muted);
 }
 
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.4rem;
+  align-items: center;
+}
+
 .terminal-card {
-  margin-top: 1.5rem;
-  padding: 1rem;
+  padding: 0;
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background-color: rgba(217, 217, 217, 0.1);
-  backdrop-filter: blur(8px);
+  background: linear-gradient(145deg, rgba(10, 32, 22, 0.95), rgba(3, 12, 8, 0.96));
+  box-shadow: 0 0 0 1px rgba(32, 219, 128, 0.1), 0 20px 60px rgba(0, 0, 0, 0.35);
 }
 
 .terminal-card .wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  position: relative;
-  z-index: 10;
-  border: 0.5px solid #525252;
-  border-radius: 8px;
+  border: 1px solid rgba(46, 212, 126, 0.24);
+  border-radius: var(--radius);
   overflow: hidden;
-}
-
-.terminal-card .terminal {
-  display: flex;
-  flex-direction: column;
-  font-family: "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace;
 }
 
 .terminal-card .head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
-  min-height: 40px;
-  padding-inline: 12px;
-  background-color: #202425;
+  min-height: 44px;
+  padding: 0.72rem 0.9rem;
+  background: rgba(5, 26, 17, 0.95);
+  border-bottom: 1px solid rgba(46, 212, 126, 0.26);
 }
 
-.terminal-card .title {
+.traffic-lights {
   display: flex;
   align-items: center;
-  gap: 8px;
-  height: 2.5rem;
-  user-select: none;
-  font-weight: 600;
-  color: #8e8e8e;
+  gap: 0.45rem;
 }
 
-.terminal-card .title > svg {
-  width: 18px;
-  height: 18px;
-  margin-top: 2px;
-  color: #006adc;
+.traffic-lights span {
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 50%;
 }
 
-.terminal-card .copy_toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.25rem;
-  border: 0.65px solid #c1c2c5;
-  margin-left: auto;
-  border-radius: 6px;
-  background-color: #202425;
-  color: #8e8e8e;
-  cursor: pointer;
-}
+.traffic-lights span:nth-child(1) { background: #ff5f57; }
+.traffic-lights span:nth-child(2) { background: #febc2e; }
+.traffic-lights span:nth-child(3) { background: #28c840; }
 
-.terminal-card .copy_toggle > svg {
-  width: 20px;
-  height: 20px;
-}
-
-.terminal-card .copy_toggle:active > svg > path,
-.terminal-card .copy_toggle:focus-within > svg > path {
-  animation: clipboard-check 500ms linear forwards;
+.terminal-path {
+  font-family: "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+  color: #57ffb0;
 }
 
 .terminal-card .body {
   display: flex;
   flex-direction: column;
-  overflow-x: auto;
+  gap: 0.28rem;
   padding: 1rem;
-  line-height: 19px;
-  color: #fff;
-  background-color: #000;
-  white-space: nowrap;
+  background: transparent;
+  font-family: "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, monospace;
+  color: #cbffe3;
 }
 
 .terminal-card .pre {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  white-space: pre;
-  background-color: transparent;
-  overflow: hidden;
-  box-sizing: border-box;
-  font-size: 16px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
 }
 
-.terminal-card .pre code:nth-child(1) {
-  color: #575757;
+.terminal-card .prompt {
+  color: #29f083;
 }
 
-.terminal-card .pre code:nth-child(2) {
-  color: #e34ba9;
+.terminal-card .output {
+  color: #8bfcc3;
+  opacity: 0.9;
 }
 
 .terminal-card .cmd {
-  height: 19px;
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  flex-direction: row;
 }
 
 .terminal-card .cmd::before {
   content: attr(data-cmd);
-  position: relative;
-  display: block;
   white-space: nowrap;
   overflow: hidden;
-  background-color: transparent;
-  animation: terminal-inputs 8s steps(22) infinite;
+  animation: terminal-inputs 6s steps(24) infinite;
 }
 
 .terminal-card .cmd::after {
   content: "";
-  position: relative;
-  display: block;
-  height: 100%;
-  border-right: 0.15em solid #e34ba9;
-  animation: terminal-cursor 0.5s step-end infinite alternate, terminal-blinking 0.5s infinite;
+  margin-left: 0.1rem;
+  height: 1em;
+  border-right: 0.14em solid #5affab;
+  animation: terminal-cursor 0.65s step-end infinite alternate;
 }
 
 .hero-tags {
@@ -563,5 +529,13 @@ body {
 
   .hero {
     padding-top: 5.2rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .terminal-card {
+    margin-top: 0.4rem;
   }
 }
