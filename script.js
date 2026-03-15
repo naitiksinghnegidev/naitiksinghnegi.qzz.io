@@ -1,35 +1,49 @@
-// Mobile Menu Toggle
-const burger = document.querySelector('.burger');
-const nav = document.querySelector('.nav-links');
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+const menuLinks = document.querySelectorAll('.menu a');
+const form = document.querySelector('#contact-form');
+const formStatus = document.querySelector('#form-status');
+const yearEl = document.querySelector('#year');
+const revealItems = document.querySelectorAll('.reveal');
 
-burger.addEventListener('click', () => {
-    nav.classList.toggle('nav-active');
-    burger.classList.toggle('toggle');
-});
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
-// Simple Scroll Reveal Animation
-const observerOptions = {
-    threshold: 0.1
-};
+if (menuToggle && menu) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+  });
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
+  menuLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
     });
-}, observerOptions);
+  });
+}
 
-document.querySelectorAll('.project-card, .hero-content').forEach(el => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    el.style.transition = "all 0.8s ease-out";
-    observer.observe(el);
-});
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
 
-// Form Submission (Prevents reload)
-document.getElementById('contact-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Thanks for reaching out, Naitik! This is a demo alert.');
-});
+revealItems.forEach((item) => revealObserver.observe(item));
+
+if (form && formStatus) {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const name = data.get('name')?.toString().trim() || 'there';
+    formStatus.textContent = `Thanks ${name}! Your message is saved locally in this demo. I will get back to you soon.`;
+    form.reset();
+  });
+}
