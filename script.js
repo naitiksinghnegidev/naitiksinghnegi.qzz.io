@@ -5,6 +5,9 @@ const yearEl = document.querySelector('#year');
 const revealItems = document.querySelectorAll('.reveal');
 const progressBar = document.querySelector('.scroll-progress');
 const sections = document.querySelectorAll('main section[id]');
+const interactiveBoxes = document.querySelectorAll(
+  '.hero-highlights article, .hero-tags span, .stat-card, .skill-item, .project-card, .capability-card, .stack-card, .certificate-card, .contact-card, .terminal-card'
+);
 
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
@@ -75,3 +78,17 @@ window.addEventListener('scroll', () => {
 
 setScrollProgress();
 setActiveSection();
+
+interactiveBoxes.forEach((box) => {
+  box.classList.add('floatable');
+  box.addEventListener('click', () => {
+    box.classList.remove('is-floating');
+    // Restart animation so each click triggers the effect.
+    void box.offsetWidth;
+    box.classList.add('is-floating');
+  });
+
+  box.addEventListener('animationend', () => {
+    box.classList.remove('is-floating');
+  });
+});
