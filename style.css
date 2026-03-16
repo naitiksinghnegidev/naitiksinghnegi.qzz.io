@@ -359,7 +359,8 @@ body {
 .skills-grid,
 .project-grid,
 .capability-grid,
-.stack-groups {
+.stack-groups,
+.certificate-grid {
   display: grid;
   gap: 1rem;
   margin-top: 1.4rem;
@@ -385,11 +386,16 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+.certificate-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
 .stat-card,
 .skill-item,
 .project-card,
 .capability-card,
 .stack-card,
+.certificate-card,
 .contact-card {
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -409,7 +415,8 @@ body {
   font-size: 1.4rem;
 }
 
-.project-card ul {
+.project-card ul,
+.certificate-card ul {
   margin-top: 0.7rem;
   padding-left: 1rem;
   color: var(--muted);
