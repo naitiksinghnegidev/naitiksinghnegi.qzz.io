@@ -19,6 +19,8 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 5rem;
 }
 
 main {
@@ -337,6 +339,7 @@ body {
 }
 
 .hero-tags span {
+  display: inline-flex;
   border: 1px solid var(--border);
   background: rgba(91, 135, 255, 0.1);
   padding: 0.38rem 0.75rem;
