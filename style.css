@@ -21,6 +21,10 @@ html {
   scroll-behavior: smooth;
 }
 
+main {
+  scroll-snap-type: y mandatory;
+}
+
 body {
   font-family: "Manrope", system-ui, -apple-system, sans-serif;
   background: radial-gradient(circle at 10% 15%, #141c3a, var(--bg) 38%);
@@ -345,6 +349,15 @@ body {
   padding: 3.5rem 0;
 }
 
+main > section {
+  scroll-snap-align: start;
+  scroll-margin-top: 5rem;
+  min-height: calc(100svh - 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .section-head {
   margin-bottom: 0.75rem;
 }
@@ -406,6 +419,21 @@ body {
   border-radius: var(--radius);
   background: var(--surface);
   padding: 1rem;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.floatable {
+  cursor: pointer;
+}
+
+.floatable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+}
+
+.floatable.is-floating {
+  animation: card-float 0.85s ease;
+  box-shadow: 0 18px 40px rgba(44, 192, 255, 0.22);
 }
 
 .stat-card h3,
@@ -516,7 +544,30 @@ body {
   }
 }
 
+@keyframes card-float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  40% {
+    transform: translateY(-11px) scale(1.01);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
 @media (max-width: 800px) {
+  main {
+    scroll-snap-type: y proximity;
+  }
+
+  main > section {
+    min-height: auto;
+    justify-content: flex-start;
+  }
+
   .menu-toggle {
     display: block;
   }
