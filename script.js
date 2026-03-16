@@ -6,7 +6,7 @@ const revealItems = document.querySelectorAll('.reveal');
 const progressBar = document.querySelector('.scroll-progress');
 const sections = document.querySelectorAll('main section[id]');
 const interactiveBoxes = document.querySelectorAll(
-  '.hero-highlights article, .hero-tags span, .stat-card, .skill-item, .project-card, .capability-card, .stack-card, .certificate-card, .contact-card, .terminal-card'
+  '.stat-card, .skill-item, .project-card, .capability-card, .stack-card, .certificate-card, .contact-card, .terminal-card'
 );
 
 if (yearEl) {
