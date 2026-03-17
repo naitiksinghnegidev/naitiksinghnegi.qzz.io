@@ -11,6 +11,17 @@
   --radius: 1rem;
 }
 
+:root[data-theme="light"] {
+  --bg: #f2f6ff;
+  --surface: rgba(255, 255, 255, 0.86);
+  --surface-soft: rgba(243, 248, 255, 0.95);
+  --text: #081127;
+  --muted: #4f5f83;
+  --primary: #2f67f6;
+  --primary-strong: #214ec7;
+  --border: rgba(75, 111, 201, 0.28);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -30,6 +41,11 @@ body {
   line-height: 1.7;
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background 0.45s ease, color 0.3s ease;
+}
+
+:root[data-theme="light"] body {
+  background: radial-gradient(circle at 10% 15%, #dfe9ff, #f2f6ff 38%);
 }
 
 .scroll-progress {
@@ -88,7 +104,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .brand {
@@ -104,6 +120,35 @@ body {
 .eyebrow,
 .project-label {
   color: var(--primary);
+}
+
+
+.theme-toggle {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.72rem;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+}
+
+.theme-toggle-icon {
+  font-size: 0.9rem;
+}
+
+.theme-toggle-text {
+  line-height: 1;
 }
 
 .menu {
@@ -193,7 +238,7 @@ body {
 
 .button.primary {
   background: linear-gradient(135deg, var(--primary), var(--primary-strong));
-  color: #031027;
+  color: #f6f9ff;
 }
 
 .button.ghost {
@@ -557,6 +602,10 @@ main > section {
     display: block;
   }
 
+  .theme-toggle {
+    margin-left: auto;
+  }
+
   .menu {
     position: absolute;
     top: 4.8rem;
@@ -596,4 +645,32 @@ main > section {
   .capability-grid {
     grid-template-columns: 1fr;
   }
+}
+
+
+:root[data-theme="light"] .terminal-card {
+  background: linear-gradient(145deg, rgba(8, 38, 84, 0.9), rgba(2, 18, 54, 0.96));
+  box-shadow: 0 0 0 1px rgba(42, 126, 255, 0.13), 0 20px 60px rgba(28, 55, 118, 0.25);
+}
+
+:root[data-theme="light"] .terminal-card .wrap {
+  border-color: rgba(76, 146, 255, 0.42);
+}
+
+:root[data-theme="light"] .terminal-card .head {
+  background: rgba(5, 36, 89, 0.92);
+  border-bottom-color: rgba(76, 146, 255, 0.4);
+}
+
+:root[data-theme="light"] .terminal-path {
+  color: #8fd4ff;
+}
+
+:root[data-theme="light"] .hero h1 span {
+  color: #315ee3;
+}
+
+:root[data-theme="light"] .hero-tags span {
+  background: rgba(47, 103, 246, 0.11);
+  color: #204dbf;
 }

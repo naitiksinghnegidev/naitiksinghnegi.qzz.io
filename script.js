@@ -1,3 +1,32 @@
+const themeToggle = document.querySelector('.theme-toggle');
+const root = document.documentElement;
+const THEME_KEY = 'portfolio-theme';
+
+const applyTheme = (theme) => {
+  const isLight = theme === 'light';
+  root.setAttribute('data-theme', isLight ? 'light' : 'dark');
+
+  if (themeToggle) {
+    themeToggle.setAttribute('aria-pressed', String(isLight));
+    const icon = themeToggle.querySelector('.theme-toggle-icon');
+    const text = themeToggle.querySelector('.theme-toggle-text');
+
+    if (icon) icon.textContent = isLight ? '☀️' : '🌙';
+    if (text) text.textContent = isLight ? 'Light' : 'Dark';
+  }
+};
+
+const initialTheme = localStorage.getItem(THEME_KEY) || 'dark';
+applyTheme(initialTheme);
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const nextTheme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    applyTheme(nextTheme);
+    localStorage.setItem(THEME_KEY, nextTheme);
+  });
+}
+
 const menuToggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.menu');
 const menuLinks = document.querySelectorAll('.menu a');
