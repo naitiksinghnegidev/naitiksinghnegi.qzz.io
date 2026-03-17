@@ -19,13 +19,9 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
   scroll-padding-top: 5rem;
 }
 
-main {
-  scroll-snap-type: y mandatory;
-}
 
 body {
   font-family: "Manrope", system-ui, -apple-system, sans-serif;
@@ -353,12 +349,7 @@ body {
 }
 
 main > section {
-  scroll-snap-align: start;
   scroll-margin-top: 5rem;
-  min-height: calc(100svh - 5rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .section-head {
@@ -562,15 +553,6 @@ main > section {
 }
 
 @media (max-width: 800px) {
-  main {
-    scroll-snap-type: y proximity;
-  }
-
-  main > section {
-    min-height: auto;
-    justify-content: flex-start;
-  }
-
   .menu-toggle {
     display: block;
   }
