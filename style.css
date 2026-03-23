@@ -19,7 +19,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 4.25rem;
 }
 
 
@@ -99,7 +99,7 @@ body {
 }
 
 .nav {
-  min-height: 4.9rem;
+  min-height: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -126,7 +126,7 @@ body {
 .menu {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 .menu a {
@@ -366,7 +366,7 @@ body {
 }
 
 main > section {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 4.25rem;
 }
 
 .section-head {
@@ -576,7 +576,7 @@ main > section {
 
   .menu {
     position: absolute;
-    top: 4.8rem;
+    top: 3.95rem;
     right: 4%;
     width: min(280px, 92vw);
     background: rgba(8, 11, 27, 0.82);
@@ -616,5 +616,4 @@ main > section {
     grid-template-columns: 1fr;
   }
 }
-
 
