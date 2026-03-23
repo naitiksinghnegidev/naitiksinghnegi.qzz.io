@@ -1,6 +1,8 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.menu');
 const menuLinks = document.querySelectorAll('.menu a');
+const siteHeader = document.querySelector('.site-header');
+const heroSection = document.querySelector('#home');
 const yearEl = document.querySelector('#year');
 const revealItems = document.querySelectorAll('.reveal');
 const progressBar = document.querySelector('.scroll-progress');
@@ -13,16 +15,32 @@ if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
+const syncHeaderState = () => {
+  if (!siteHeader || !heroSection) {
+    return;
+  }
+
+  const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+  const navHeight = siteHeader.offsetHeight;
+  const hasScrolledPastHero = window.scrollY > heroBottom - navHeight - 40;
+  const isMenuOpen = Boolean(menu && menu.classList.contains('open'));
+
+  siteHeader.classList.toggle('nav-scrolled', hasScrolledPastHero);
+  siteHeader.classList.toggle('menu-open', isMenuOpen);
+};
+
 if (menuToggle && menu) {
   menuToggle.addEventListener('click', () => {
     const isOpen = menu.classList.toggle('open');
     menuToggle.setAttribute('aria-expanded', String(isOpen));
+    syncHeaderState();
   });
 
   menuLinks.forEach((link) => {
     link.addEventListener('click', () => {
       menu.classList.remove('open');
       menuToggle.setAttribute('aria-expanded', 'false');
+      syncHeaderState();
     });
   });
 }
@@ -74,10 +92,14 @@ const setScrollProgress = () => {
 window.addEventListener('scroll', () => {
   setScrollProgress();
   setActiveSection();
+  syncHeaderState();
 });
+
+window.addEventListener('resize', syncHeaderState);
 
 setScrollProgress();
 setActiveSection();
+syncHeaderState();
 
 interactiveBoxes.forEach((box) => {
   box.classList.add('floatable');
