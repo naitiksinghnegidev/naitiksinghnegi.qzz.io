@@ -25,7 +25,12 @@ html {
 
 body {
   font-family: "Manrope", system-ui, -apple-system, sans-serif;
-  background: radial-gradient(circle at 10% 15%, #141c3a, var(--bg) 38%);
+  background:
+    linear-gradient(rgba(132, 156, 221, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(132, 156, 221, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 10% 15%, #141c3a, var(--bg) 38%);
+  background-size: 44px 44px, 44px 44px, auto;
+  background-position: center center, center center, center;
   color: var(--text);
   line-height: 1.7;
   min-height: 100vh;
@@ -88,7 +93,7 @@ body {
 .site-header.nav-scrolled,
 .site-header.menu-open {
   backdrop-filter: blur(18px);
-  background: rgba(10, 14, 30, 0.62);
+  background: rgba(10, 14, 30, 0.78);
   border-bottom-color: rgba(140, 166, 230, 0.2);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
 }
