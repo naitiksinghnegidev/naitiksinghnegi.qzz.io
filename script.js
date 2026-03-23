@@ -2,13 +2,13 @@ const menuToggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.menu');
 const menuLinks = document.querySelectorAll('.menu a');
 const siteHeader = document.querySelector('.site-header');
-const heroSection = document.querySelector('#home');
+const heroSection = document.querySelector('#home') || document.querySelector('.page-hero');
 const yearEl = document.querySelector('#year');
 const revealItems = document.querySelectorAll('.reveal');
 const progressBar = document.querySelector('.scroll-progress');
 const sections = document.querySelectorAll('main section[id]');
 const interactiveBoxes = document.querySelectorAll(
-  '.stat-card, .skill-item, .project-card, .capability-card, .stack-card, .certificate-card, .contact-card, .terminal-card'
+  '.stat-card, .skill-item, .project-card, .capability-card, .stack-card, .certificate-card, .contact-card, .terminal-card, .feature-card, .panel-card'
 );
 
 if (yearEl) {
@@ -63,7 +63,18 @@ if ('IntersectionObserver' in window) {
   revealItems.forEach((item) => item.classList.add('visible'));
 }
 
+const normalizePath = (value) => value.split('#')[0].split('/').pop() || 'index.html';
+const currentPath = normalizePath(window.location.pathname);
+
 const setActiveSection = () => {
+  if (sections.length === 0) {
+    menuLinks.forEach((link) => {
+      const isActive = normalizePath(link.getAttribute('href') || '') === currentPath;
+      link.classList.toggle('active', isActive);
+    });
+    return;
+  }
+
   const scrollPosition = window.scrollY + 160;
   let currentId = 'home';
 
@@ -74,7 +85,8 @@ const setActiveSection = () => {
   });
 
   menuLinks.forEach((link) => {
-    const isActive = link.getAttribute('href') === `#${currentId}`;
+    const href = link.getAttribute('href') || '';
+    const isActive = href === `#${currentId}` || normalizePath(href) === currentPath;
     link.classList.toggle('active', isActive);
   });
 };
@@ -105,7 +117,6 @@ interactiveBoxes.forEach((box) => {
   box.classList.add('floatable');
   box.addEventListener('click', () => {
     box.classList.remove('is-floating');
-    // Restart animation so each click triggers the effect.
     void box.offsetWidth;
     box.classList.add('is-floating');
   });
