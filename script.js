@@ -138,3 +138,51 @@ interactiveBoxes.forEach((box) => {
     box.classList.remove('is-floating');
   });
 });
+
+const copyEmailButton = document.querySelector('.copy-email');
+
+if (copyEmailButton) {
+  const status = copyEmailButton.querySelector('.copy-status');
+  const email = copyEmailButton.dataset.email;
+
+  copyEmailButton.addEventListener('click', async () => {
+    if (!email) {
+      return;
+    }
+
+    let copied = false;
+
+    if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(email);
+        copied = true;
+      } catch {
+        copied = false;
+      }
+    }
+
+    if (!copied) {
+      const input = document.createElement('textarea');
+      input.value = email;
+      input.setAttribute('readonly', '');
+      input.style.position = 'fixed';
+      input.style.opacity = '0';
+      document.body.append(input);
+      input.select();
+      copied = document.execCommand('copy');
+      input.remove();
+    }
+
+    copyEmailButton.classList.toggle('is-copied', copied);
+    if (status) {
+      status.textContent = copied ? 'Copied!' : 'Copy failed';
+    }
+
+    window.setTimeout(() => {
+      copyEmailButton.classList.remove('is-copied');
+      if (status) {
+        status.textContent = '';
+      }
+    }, 2400);
+  });
+}
